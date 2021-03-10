@@ -62,6 +62,8 @@ function JourneysTable() {
         )
       })
   }
+
+
   const classes = useStyles();
 
   if (redirect){
@@ -73,8 +75,8 @@ function JourneysTable() {
         <Table className={classes.table} aria-label="customized table">
           <TableHead>
             <TableRow>
-              <StyledTableCell align="center">destination</StyledTableCell>
-              <StyledTableCell align="center">date</StyledTableCell>
+              <StyledTableCell align="center" >destination</StyledTableCell>
+              <StyledTableCell align="center" >date</StyledTableCell>
               <StyledTableCell align="center">pass</StyledTableCell>
               <StyledTableCell align="center">filename</StyledTableCell>
               <StyledTableCell align="center"></StyledTableCell>

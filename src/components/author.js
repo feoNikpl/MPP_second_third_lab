@@ -48,6 +48,11 @@ export default class Author extends React.Component{
           }
         event.preventDefault();
     };
+    componentDidMount() {
+        fetch('/api/getName')
+            .then(results => results.json())
+            .then(data => this.setState({name: data.name}));
+    };
     
     render(){
         if (this.state.redirect !== "") {
@@ -56,6 +61,7 @@ export default class Author extends React.Component{
         return (
             <React.Fragment>
                 <form encType="multipart/form-data" onSubmit={this.SubmitHandler}>
+                    <p1>Автор: {this.state.name}</p1><br/><br/>
                     <input type="text" name="destination" onChange={this.onChangeHandler} placeholder="страна назначения" required/><br/><br/>
                     Выберите дату:<br/> <input id="date" onChange={this.onChangeHandler} type="date" name="date" required/><br/><br/>
                     <input type="file" name="file" onChange={(e) => {this.setState({file: e.target.files[0]});}} placeholder="выберите файл"/><br/><br/>

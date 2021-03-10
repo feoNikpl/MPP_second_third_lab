@@ -21,4 +21,6 @@ router.put('/api/update/:id/:pass', controller.verify, controller.updateJourney)
 
 router.get('/api/download/:filename', controller.sendFile);
 
+router.get('/api/getName', controller.verify, controller.getName);
+
 module.exports = router;

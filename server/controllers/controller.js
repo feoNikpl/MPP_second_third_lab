@@ -133,3 +133,8 @@ exports.sendFile = async function(request, response){
     const file = request.params.filename;
     response.status(200).download("./uploads/" + file);
 };
+
+exports.getName = async function(request, response){
+    let user = jwt.decode(request.session.token);
+    response.status(200).send(JSON.stringify(user));
+};
